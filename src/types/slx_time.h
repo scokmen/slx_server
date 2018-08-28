@@ -3,9 +3,9 @@
 
 #include <time.h>
 
-typedef time_t slx_timestamp;
+typedef const time_t slx_timestamp;
 
-typedef struct slx_datetime {
+typedef const struct slx_datetime {
     int year;
     int month;
     int day;
@@ -14,7 +14,8 @@ typedef struct slx_datetime {
     int second;
 } slx_datetime;
 
-slx_timestamp slx_get_timestamp();
-slx_datetime  slx_get_datetime(slx_timestamp* timestamp);
+slx_timestamp slx_timestamp_now();
+slx_datetime  slx_datetime_from(slx_timestamp timestamp);
+slx_datetime  slx_datetime_now();
 
 #endif //SERVER_SLX_TIME_H
